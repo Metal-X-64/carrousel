@@ -31,11 +31,20 @@
     function creer_radio_carrousel(index) {
         let carrousel__radio = document.createElement('input');
         // class
+        carrousel__radio.classList.add('carrousel__radio');
         // index
+        carrousel__radio.dataset.index = index;
         // type
+        carrousel__radio.type = "radio";
         // name
+        carrousel__radio.name = "radio_carrousel";
         // ajouter dans carrousel__form
+        carrousel__figure.appendChild(carrousel__radio);
         // ajouter un écouteur qui permettra de changer l'opacité de l'image " index "
+        carrousel__radio.addEventListener('mousedown', function(){
+            carrousel__figure.children[index].style.opacity = 1;
+        })
+
         //carrousel__img.children[index].style.opacity = 1;
     }
 
