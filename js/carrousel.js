@@ -10,6 +10,7 @@
     console.log('galerie = ' + galerie.tagName);
 
     let carrousel__figure = document.querySelector('.carrousel__figure');
+    let carrousel__form = document.querySelector('.carrousel__form');
 
     /* récupère la première image de la galerie */
     //let galerie__img = galerie.querySelector('img');
@@ -39,9 +40,16 @@
         // name
         carrousel__radio.name = "radio_carrousel";
         // ajouter dans carrousel__form
-        carrousel__figure.appendChild(carrousel__radio);
+        carrousel__form.appendChild(carrousel__radio);
         // ajouter un écouteur qui permettra de changer l'opacité de l'image " index "
         carrousel__radio.addEventListener('mousedown', function(){
+            //carrousel__figure.children.each((elm) => {elm.style.opacity = 0} );
+            
+            console.log("Nombre d'images dans le carrousel : " + carrousel__figure.children.length);
+            for (const elm of carrousel__figure.children) {
+                elm.style.opacity = 0;
+            }
+            
             carrousel__figure.children[index].style.opacity = 1;
         })
 
@@ -68,8 +76,8 @@
     console.log("première image de la galerie = " + galerie__img.src);
     carrousel__img.src = galerie__img.src;
     console.log("première image du carrousel = " + carrousel__img.src);
-    carrousel__figure.appendChild(carrousel__img);
-    console.log(carrousel__figure);*/
+    carrousel__figure.appendChild(carrousel__img);*/
+    //console.log(carrousel__figure);
 
 
 
