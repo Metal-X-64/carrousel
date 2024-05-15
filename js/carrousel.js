@@ -72,13 +72,6 @@
         carrousel__figure.appendChild(carrousel__img);
     }
 
-    /*
-    console.log("première image de la galerie = " + galerie__img.src);
-    carrousel__img.src = galerie__img.src;
-    console.log("première image du carrousel = " + carrousel__img.src);
-    carrousel__figure.appendChild(carrousel__img);*/
-    //console.log(carrousel__figure);
-
 
 
 /* écouteur pour ouvrir la boîte modale */
