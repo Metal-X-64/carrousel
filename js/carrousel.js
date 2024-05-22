@@ -25,6 +25,59 @@
         index = index + 1;
     }
 
+    let carrousel__suivant = document.querySelector('.carrousel__suivant');
+
+    let carrousel__precedent = document.querySelector('.carrousel__precedent');
+
+        let carrousel__radio = document.createElement('input');
+
+        // Appuyer sur le bouton suivant
+        carrousel__suivant.addEventListener('click', function(){
+            let index = 0;
+            for (const radio of carrousel__radio) {
+                if (radio.checked == true) {
+                    // La radio devient false
+                    radio.checked = false;
+                    carrousel__img[index].style.opacity = 0;
+
+                    if(index == carrousel__radio.length - 1){
+                        index = 0;
+                    }else{
+                        index++;
+                    }
+
+                    carrousel__radio[index].checked = true;
+                    carrousel__img[index].style.opacity = 1;
+                    break;
+                }
+                index++;
+            }
+        });
+
+        // Appuyer sur le bouton précédent
+        carrousel__precedent.addEventListener('click', function(){
+            let index = 0;
+            for (const radio of carrousel__radio) {
+                if (radio.checked == true) {
+                    // La radio devient false
+                    radio.checked = false;
+                    carrousel__img[index].style.opacity = 0;
+
+                    if(index == carrousel__radio.length - 1){
+                        index = 0;
+                    }else{
+                        index--;
+                    }
+
+                    carrousel__radio[index].checked = true;
+                    carrousel__img[index].style.opacity = 1;
+                    break;
+                }
+                index++;
+            }
+        });
+
+
     /**
      * Création d'un radio bouton du carrousel
      * @param {*} index le numéro du radio
@@ -52,8 +105,6 @@
             
             carrousel__figure.children[index].style.opacity = 1;
         })
-
-        //carrousel__img.children[index].style.opacity = 1;
     }
 
     /**
