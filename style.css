@@ -58,6 +58,7 @@
   left: 0;
   object-fit: cover;
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .bouton__ouvrir {
@@ -107,5 +108,4 @@
 
 .carrousel__suivant {
   right: 10px;
-  top: px;
 }/*# sourceMappingURL=style.css.map */
