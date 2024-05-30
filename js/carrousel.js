@@ -15,26 +15,43 @@
     /* récupère la première image de la galerie */
     //let galerie__img = galerie.querySelector('img');
     /* pour créer une collection d'images de la galerie */
+
     let galerie__img = galerie.querySelectorAll('img');
     console.log(galerie__img);
+
     let index = 0;
     for (const elm of galerie__img)
     {
+        console.log(elm.src);
+        elm.dataset.index = index;
         creer_image_carrousel(index, elm);
         creer_radio_carrousel(index);
+        console.log(index);
         index = index + 1;
+        
+        // Event listener sur chaque image
+        elm.addEventListener('click', function() {
+            // Ajout de la classe carrousel--ouvrir
+            carrousel.classList.add('carrousel--ouvrir');
+
+            console.log(elm.dataset.index);
+
+            carrousel__radio[elm.dataset.index].checked = true;
+            
+            creer_image_carrousel(elm.dataset.index);
+        });
+        //index++;
     }
 
     let carrousel__suivant = document.querySelector('.carrousel__suivant');
 
     let carrousel__precedent = document.querySelector('.carrousel__precedent');
 
-        let carrousel__radio = document.createElement('input');
+    let carrousel__radio = document.querySelectorAll('.carrousel__radio');
 
         // Appuyer sur le bouton suivant
         carrousel__suivant.addEventListener('click', function(){
             let index = 0;
-            console.log("Suivant");
             /*for (const radio of carrousel__radio) {
                 if (radio.checked == true) {
                     // La radio devient false
@@ -52,13 +69,14 @@
                     break;
                 }
                 index++;
-            }*/
+            }
+            console.log(index);*/
         });
 
         // Appuyer sur le bouton précédent
         carrousel__precedent.addEventListener('click', function(){
             let index = 0;
-            /*for (const radio of carrousel__radio) {
+            for (const radio of carrousel__radio) {
                 if (radio.checked == true) {
                     // La radio devient false
                     radio.checked = false;
@@ -75,7 +93,7 @@
                     break;
                 }
                 index++;
-            }*/
+            }
         });
 
 
