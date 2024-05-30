@@ -40,6 +40,10 @@
   background-color: rgb(41, 32, 83);
 }
 
+.bouton__ouvrir {
+  display: none;
+}
+
 .carrousel--ouvrir {
   transform: scale(1);
 }
