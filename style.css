@@ -87,4 +87,25 @@
 
 .carrousel__radio:checked {
   background-color: rgb(0, 88, 228);
+}
+
+.carrousel > button {
+  position: absolute;
+  padding: 10px;
+  z-index: 10;
+  background-color: #d7f0ff;
+  border: 0.25em solid rgb(7, 0, 98);
+  border-radius: 25%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.carrousel > button:hover {
+  background-color: rgb(41, 32, 83);
+  color: aquamarine;
+}
+
+.carrousel__suivant {
+  right: 10px;
+  top: px;
 }/*# sourceMappingURL=style.css.map */

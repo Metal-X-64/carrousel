@@ -1,15 +1,13 @@
 (function(){
-    console.log("Vive Javascript");
     let carrousel = document.querySelector('.carrousel');
-    console.log("conteneur carrousel = " + carrousel.tagName);
     let bouton = document.querySelector('.bouton__ouvrir');
-    console.log("bouton = " + bouton.tagName);
     let carrousel__x = document.querySelector('.carrousel__x');
-    console.log('carrousel__x' + carrousel__x.tagName);
     let galerie = document.querySelector('.galerie');
     console.log('galerie = ' + galerie.tagName);
 
     let carrousel__figure = document.querySelector('.carrousel__figure');
+
+    // Création d'images dans le carrousel
     let carrousel__form = document.querySelector('.carrousel__form');
 
     /* récupère la première image de la galerie */
@@ -27,8 +25,7 @@
         creer_image_carrousel(index, elm);
         creer_radio_carrousel(index);
         console.log(index);
-        index = index + 1;
-        
+
         // Event listener sur chaque image
         elm.addEventListener('click', function() {
             // Ajout de la classe carrousel--ouvrir
@@ -40,19 +37,22 @@
             
             creer_image_carrousel(elm.dataset.index);
         });
-        //index++;
+        index++;
     }
+
+    // Chercher tous les images du carrousel
+    let carrousel__radio = document.querySelectorAll('.carrousel__radio');
+
+    let carrousel__img = carrousel__figure.querySelectorAll('.carrousel__img');
 
     let carrousel__suivant = document.querySelector('.carrousel__suivant');
 
     let carrousel__precedent = document.querySelector('.carrousel__precedent');
 
-    let carrousel__radio = document.querySelectorAll('.carrousel__radio');
-
         // Appuyer sur le bouton suivant
         carrousel__suivant.addEventListener('click', function(){
             let index = 0;
-            /*for (const radio of carrousel__radio) {
+            for (const radio of carrousel__radio) {
                 if (radio.checked == true) {
                     // La radio devient false
                     radio.checked = false;
@@ -70,7 +70,7 @@
                 }
                 index++;
             }
-            console.log(index);*/
+            console.log(index);
         });
 
         // Appuyer sur le bouton précédent
