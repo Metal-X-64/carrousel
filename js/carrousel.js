@@ -34,7 +34,8 @@
         // Appuyer sur le bouton suivant
         carrousel__suivant.addEventListener('click', function(){
             let index = 0;
-            for (const radio of carrousel__radio) {
+            console.log("Suivant");
+            /*for (const radio of carrousel__radio) {
                 if (radio.checked == true) {
                     // La radio devient false
                     radio.checked = false;
@@ -51,13 +52,13 @@
                     break;
                 }
                 index++;
-            }
+            }*/
         });
 
         // Appuyer sur le bouton précédent
         carrousel__precedent.addEventListener('click', function(){
             let index = 0;
-            for (const radio of carrousel__radio) {
+            /*for (const radio of carrousel__radio) {
                 if (radio.checked == true) {
                     // La radio devient false
                     radio.checked = false;
@@ -74,7 +75,7 @@
                     break;
                 }
                 index++;
-            }
+            }*/
         });
 
 
@@ -95,9 +96,9 @@
         // ajouter dans carrousel__form
         carrousel__form.appendChild(carrousel__radio);
         // ajouter un écouteur qui permettra de changer l'opacité de l'image " index "
-        carrousel__radio.addEventListener('mousedown', function(){
+        carrousel__radio.addEventListener('mousedown', function(e){
             //carrousel__figure.children.each((elm) => {elm.style.opacity = 0} );
-            
+            console.log(e.target.dataset.index);
             console.log("Nombre d'images dans le carrousel : " + carrousel__figure.children.length);
             for (const elm of carrousel__figure.children) {
                 elm.style.opacity = 0;
